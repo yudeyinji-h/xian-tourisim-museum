@@ -1,41 +1,16 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        xian-tourisim-museum
-      </h1>
-      <h2 class="subtitle">
-        My world-class Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="container" style="100%">
+    <h1>西安旅游博物馆</h1>
+    <button>
+      <nuxt-link to="/museumList" class="hrefStyle">Go</nuxt-link>
+    </button>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
-  components: {
-    Logo
-  }
-}
+  components: {}
+};
 </script>
 
 <style>
@@ -48,30 +23,21 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+button {
   display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+  height: 50px;
+  margin: 10px;
+  background-color: skyBlue;
+  padding: 0 30px;
+  border-radius: 10px;
+  outline: none;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.hrefStyle {
+  outline: none;
 }
 </style>
