@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="headContainer"></div>
+    <div class="bg-red-300 w-full h-10 fixed top-0 left-0"></div>
   </div>
 </template>
 
@@ -13,12 +13,4 @@ export default {
 </script>
 
 <style>
-.headContainer {
-  background-color: pink;
-  width: 100%;
-  height: 40px;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
 </style>

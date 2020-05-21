@@ -23,11 +23,13 @@ export default {
   ** Global CSS
   */
   css: [
+    '~assets/css/global.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/echarts', mode: "client" }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -59,7 +61,7 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   }
 }

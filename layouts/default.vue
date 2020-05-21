@@ -1,21 +1,21 @@
 <template>
   <div>
-    <Head></Head>
+    <!-- <Head></Head> -->
     <nuxt/>
-    <Foot></Foot>
+    <!-- <Foot></Foot> -->
   </div>
 </template>
 
 <script>
-import Head from "../components/head";
-import Foot from "../components/foot";
+// import Head from "../components/head";
+// import Foot from "../components/foot";
 export default {
   data() {
     return {};
   },
   components: {
-    Head,
-    Foot
+    // Head,
+    // Foot
   }
 };
 </script>
