@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-screen bg-indigo-800 flex justify-center">
+  <div class="w-screen h-screen bg-purple-800 flex justify-center">
     <nuxt-link
       to="/museumList"
       class="goLink w-10/12 h-12 bg-red-400 rounded-full fixed flex items-center justify-center text-white font-medium"

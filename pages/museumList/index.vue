@@ -1,27 +1,39 @@
 <template>
-  <div class="w-screen h-screen  bg-indigo-800 pt-6">
+  <div class="w-screen h-screen bg-purple-800 pt-6">
     <div class="w-auto listItem bg-green-500 mx-4 rounded-md flex overflow-hidden">
       <ul class="h-full flex justify-around flex-wrap py-1 px-1 overflow-y-scroll mt-2">
-          <li
-            v-for="(item,id) in museums"
-            :key="id"
-            :class="[{activeMuseum:item.selected,eachMuseum:true}]"
-            @click="isSelected(id)"
-          >{{item.museum}}</li>
-        </ul>
+        <li
+          v-for="(item,id) in museums"
+          :key="id"
+          :class="[{activeMuseum:item.selected,eachMuseum:true}]"
+          @click="isSelected(id)"
+        >{{item.museum}}</li>
+      </ul>
     </div>
-    <div class="w-11/12 h-12 mx-auto mt-8 rounded-full overflow-hidden subShadow">
+    <div
+      class="w-11/12 h-12 mx-auto mt-8 rounded-full overflow-hidden subShadow"
+      @click="checkclicked"
+    >
       <nuxt-link
         to="/map"
         class="w-full h-full flex items-center justify-center text-white font-semibold submitt"
       >提 交</nuxt-link>
     </div>
+
+    <!-- 弹窗提示 -->
+    <div
+      class="bg-gray-100 border border-red-500 text-red-700 px-4 py-3 rounded relative dialog hidden"
+      role="alert"
+      ref="mess"
+    >
+      <span>请选择您去过的博物馆！</span>
+    </div>
   </div>
 </template>
 <script>
-import { mapState, mapMutations } from "vuex";
+import { mapState, mapMutations, mapGetters } from "vuex";
+
 export default {
-  layout: "showMap",
   data() {
     return {
       isActive: false
@@ -31,19 +43,27 @@ export default {
     this.addSelect();
   },
   computed: {
-    ...mapState(["museums"])
+    ...mapState(["museums"]),
+    ...mapGetters(["addressArr"])
   },
   methods: {
     ...mapMutations(["changeSelected", "addSelect"]),
     isSelected(id) {
       this.changeSelected(id);
+    },
+    checkclicked() {
+      if (this.addressArr.length === 0) {
+        this.$refs.mess.style.display = "block";
+        setTimeout(() => {
+          this.$refs.mess.style.display = "none";
+        }, 1500);
+      }
     }
   }
 };
 </script>
 
 <style>
-
 .listItem {
   height: 80%;
 }
@@ -76,5 +96,10 @@ export default {
 }
 .subShadow {
   box-shadow: 0 3px 3px rgb(13, 136, 120);
+}
+.dialog {
+  position: fixed;
+  bottom: 16%;
+  left: 20%;
 }
 </style>
