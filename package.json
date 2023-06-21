@@ -19,7 +19,7 @@
     "html2canvas": "^1.0.0-rc.5",
     "lodash": "^4.17.15",
     "ly-downloader": "^1.0.5",
-    "nuxt": "^2.0.0"
+    "nuxt": "^3.4.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",
